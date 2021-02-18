@@ -58,13 +58,13 @@ git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
 # Add luci-app-gowebdav
-git clone --depth=1 https://github.com/project-openwrt/openwrt-gowebdav
+#git clone --depth=1 https://github.com/project-openwrt/openwrt-gowebdav
 
 # Add tmate
-git clone --depth=1 https://github.com/project-openwrt/openwrt-tmate
+#git clone --depth=1 https://github.com/project-openwrt/openwrt-tmate
 
 # Add subconverter
-git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
+#git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
 # Add gotop
 svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop
@@ -80,7 +80,7 @@ git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 
 # Add luci-app-oled (R2S Only)
-git clone --depth=1 https://github.com/NateLol/luci-app-oled
+#git clone --depth=1 https://github.com/NateLol/luci-app-oled
 
 # Add driver for rtl8821cu & rtl8812au-ac
 svn co https://github.com/project-openwrt/openwrt/branches/master/package/ctcgfw/rtl8812au-ac
@@ -118,10 +118,10 @@ sed -i '/mt7662u_rom_patch.bin/a\\techo mt76-usb disable_usb_sg=1 > $\(1\)\/etc\
 popd
 
 # Add po2lmo
-git clone https://github.com/openwrt-dev/po2lmo.git
-pushd po2lmo
-make && sudo make install
-popd
+#git clone https://github.com/openwrt-dev/po2lmo.git
+#pushd po2lmo
+#make && sudo make install
+#popd
 
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
