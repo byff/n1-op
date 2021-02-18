@@ -1,0 +1,51 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'fdea:b6ae:c0d4::/48'
+
+config interface 'lan'
+	option type 'bridge'
+	option ifname 'eth0'
+	option proto 'static'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+	option ipaddr '192.168.1.2'
+	option gateway '192.168.1.1'
+	option dns '192.168.1.2'
+	option ip6hint '2409:8a6a:821:ba40::'
+	option ip6ifaceid '::2'
+
+config interface 'vpn0'
+	option _orig_ifname 'tun0'
+	option _orig_bridge 'false'
+	option proto 'l2tp'
+
+config interface 'lan6'
+	option proto 'dhcpv6'
+	option ifname '@lan'
+	option reqaddress 'try'
+	option reqprefix 'auto'
+
+config route
+	option interface 'lan'
+	option target '10.60.10.0'
+	option netmask '255.255.254.0'
+	option gateway '192.168.1.253'
+
+config route
+	option interface 'lan'
+	option target '117.235.213.0'
+	option netmask '255.255.255.0'
+	option gateway '192.168.1.253'
+
+config route
+	option interface 'lan'
+	option target '172.16.21.0'
+	option netmask '255.255.255.0'
+	option gateway '192.168.1.253'
+
